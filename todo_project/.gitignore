@@ -7,3 +7,5 @@ __pycache__/
 # Ignore db.sqlite3 database file
 db.sqlite3  
 
+# Ignore .gitignore file
+.gitignore
