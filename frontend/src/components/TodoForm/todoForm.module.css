@@ -1,0 +1,70 @@
+/* Style for the todo form component */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+/* Style for input group */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+/* Style for task input and description */
+.task {
+  width: 450px;
+  height: 40px;
+  margin: 5px 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.taskDesc {
+  width: 500px;
+  height: 120px;
+  margin: 5px 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* Style for add task button */
+.addTask {
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #140f27;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Hover effect for add task button */
+.addTask:hover {
+  background-color: #262627;
+  font-size: 17px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 520px) {
+  .task {
+    width: 300px;
+    height: 30px;
+  }
+  .taskDesc {
+    width: 300px;
+    height: 80px;
+  }
+  .addTask {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    padding: 8px;
+  }
+}

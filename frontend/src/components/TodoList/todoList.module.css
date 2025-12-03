@@ -1,0 +1,45 @@
+/* Syle for heading */
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(19, 19, 19);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Style for task buttons */
+.taskButton {
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #140f27;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Container for buttons */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin: auto;
+}
+/* Hover effect for task buttons */
+.taskButton:hover {
+  background-color: #262627;
+  font-size: 17px;
+}
+/* Responsive design */
+@media screen and (max-width: 500px) {
+  .taskButton {
+    width: 100px;
+    font-size: 14px;
+    padding: 8px;
+  }
+}
