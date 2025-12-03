@@ -1,5 +1,6 @@
 import styles from "./todoList.module.css";
 import TodoItem from "../todoItem/todoItem.jsx";
+import { Link } from "react-router-dom";
 
 const TodoList = () => {
   return (
@@ -10,10 +11,9 @@ const TodoList = () => {
       <TodoItem />
       <div className={styles.buttonContainer}>
         <div>
-          <button className={styles.taskButton}>Add More Tasks</button>
-        </div>
-        <div>
-          <button className={styles.taskButton}>Delete Task</button>
+          <Link to="/add" className={styles.taskButton}>
+            Create Tasks
+          </Link>
         </div>
       </div>
     </div>

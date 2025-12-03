@@ -1,6 +1,7 @@
 /* Style for the todo item component */
 .todoItems {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -18,18 +19,82 @@
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  position: relative;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.optionMenu {
+  display: none;
+  list-style-type: none;
+  border: 1px solid #ccc;
+  background-color: rgb(9, 9, 27);
+  border-radius: 5px;
+  flex-direction: column;
+  cursor: pointer;
+  width: 100px;
+  height: auto;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: absolute;
+  right: 10px;
+  top: calc(100% + 6px);
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.optionItem {
+  padding: 6px 8px;
+  border-bottom: 1px solid #555050;
+  height: auto;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.menuOpen {
+  display: flex;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: bold;
+  font-size: 14px;
 }
 /* Style for completed todo item */
 .completed {
   text-decoration: line-through;
   color: gray;
 }
+
 /* Responsive design  */
 @media screen and (max-width: 575px) {
   .todoItem {
     width: 300px;
     height: 30px;
-    font-size: 14px;
+    font-size: 12px;
     padding: 8px;
+    position: relative;
+  }
+  /* smaller compact menu for small screens */
+  .optionMenu {
+    width: 90px;
+    right: 6px;
+    top: calc(100% + 4px);
+    padding: 2px 0;
+  }
+
+  .optionItem {
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+
+  .link {
+    font-size: 12px;
   }
 }

@@ -7,7 +7,7 @@
   align-items: center;
 }
 /* Style for link in the navbar */
-a {
+.heading {
   color: white;
   text-decoration: none;
   font-size: 2rem;
@@ -15,7 +15,7 @@ a {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 /* Hover effect for link */
-a:hover {
+.heading:hover {
   color: rgb(252, 252, 152);
 }
 /* Responsive design */

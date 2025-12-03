@@ -2,7 +2,7 @@ import styles from "./todoForm.module.css";
 
 const TodoForm = () => {
   return (
-    <div className={styles.form}>
+    <div className={styles.form} id="add">
       <div className={styles.inputGroup}>
         <div>
           <input className={styles.task} type="text" placeholder="task 1" />
