@@ -2,13 +2,18 @@ import { Link } from "react-router-dom";
 import styles from "./todoItem.module.css";
 import { useState } from "react";
 
-const TodoItem = ({ title = "" }) => {
+const TodoItem = ({ todo, onToggle, onDelete }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className={styles.todoItems}>
       <div className={styles.todoItem}>
-        <input className={styles.checkBox} type="checkbox" />
-        <p> {title}</p>
+        <input
+          className={styles.checkBox}
+          type="checkbox"
+          checked={!!todo.done}
+          onChange={onToggle}
+        />
+        <p> {todo.title}</p>
         <a className={styles.dots} onClick={() => setMenuOpen(!menuOpen)}>
           <img src="./src/assets/3dots.png" alt="open menu" />
         </a>
@@ -16,14 +21,14 @@ const TodoItem = ({ title = "" }) => {
           className={`${styles.optionMenu} ${menuOpen ? styles.menuOpen : ""}`}
         >
           <li className={styles.optionItem}>
-            <Link className={styles.link} to="/edit">
+            <Link className={styles.link} to={`/edit/${todo.id}`}>
               Edit
             </Link>
           </li>
           <li className={styles.optionItem}>
-            <Link className={styles.link} to="/delete">
+            <button className={styles.link} onClick={onDelete}>
               Delete
-            </Link>
+            </button>
           </li>
         </ul>
       </div>

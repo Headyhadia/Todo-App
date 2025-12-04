@@ -1,9 +1,14 @@
 import TodoList from "../Components/TodoList/todoList";
 
-const ListPage = () => {
+const ListPage = ({ todos, onToggle, onDelete, onUpdate }) => {
   return (
     <div>
-      <TodoList />
+      <TodoList
+        todos={todos}
+        onToggle={onToggle}
+        onDelete={onDelete}
+        onUpdate={onUpdate}
+      />
     </div>
   );
 };
