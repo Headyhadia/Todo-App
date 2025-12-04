@@ -1,0 +1,39 @@
+.editPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.editPage form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.titleInput {
+  width: 300px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.descriptionInput {
+  width: 500px;
+  height: 120px;
+  padding: 5px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.btn {
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #140f27;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

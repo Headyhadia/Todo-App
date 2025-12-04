@@ -1,4 +1,4 @@
-// src/Pages/EditPage.jsx
+import TodoForm from "../components/TodoForm/todoForm";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -20,20 +20,13 @@ export default function EditPage({ todos = [], onUpdate }) {
   if (!todo) return <div style={{ padding: 20 }}>Todo not found</div>;
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Edit Todo</h2>
-      <form onSubmit={handleSave}>
-        <div>
-          <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        </div>
-        <div>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
-        <button type="submit">Save</button>
-      </form>
-    </div>
+    <TodoForm
+      title={title}
+      setTitle={setTitle}
+      description={description}
+      setDescription={setDescription}
+      onSubmit={handleSave}
+      submitLabel="Save"
+    />
   );
 }

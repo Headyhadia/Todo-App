@@ -13,13 +13,14 @@ const TodoForm = ({ onAdd }) => {
     setDescription("");
   };
   return (
-    <div className={styles.form} id="add">
-      <div onSubmit={submit} className={styles.inputGroup}>
+    <form className={styles.form} id="add" onSubmit={submit}>
+      <div className={styles.inputGroup}>
         <div>
           <input
             className={styles.task}
             type="text"
             placeholder="Title"
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
@@ -28,6 +29,7 @@ const TodoForm = ({ onAdd }) => {
             className={styles.taskDesc}
             type="text"
             placeholder="description of task"
+            value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
@@ -37,7 +39,7 @@ const TodoForm = ({ onAdd }) => {
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 export default TodoForm;

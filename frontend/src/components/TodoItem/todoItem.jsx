@@ -13,7 +13,7 @@ const TodoItem = ({ todo, onToggle, onDelete }) => {
           checked={!!todo.done}
           onChange={onToggle}
         />
-        <p> {todo.title}</p>
+        <p className={todo.done ? styles.completed : ""}> {todo.title}</p>
         <a className={styles.dots} onClick={() => setMenuOpen(!menuOpen)}>
           <img src="./src/assets/3dots.png" alt="open menu" />
         </a>
@@ -26,7 +26,7 @@ const TodoItem = ({ todo, onToggle, onDelete }) => {
             </Link>
           </li>
           <li className={styles.optionItem}>
-            <button className={styles.link} onClick={onDelete}>
+            <button className={styles.btn} onClick={onDelete}>
               Delete
             </button>
           </li>
