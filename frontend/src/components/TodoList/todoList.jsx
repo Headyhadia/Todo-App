@@ -2,19 +2,26 @@ import styles from "./todoList.module.css";
 import TodoItem from "../todoItem/todoItem.jsx";
 import { Link } from "react-router-dom";
 
-const TodoList = ({ todos, onToggle, onDelete, onUpdate }) => {
+const TodoList = ({ todos = [], onToggle, onDelete, onUpdate }) => {
+  //Normalize: ensure todos is always an array
+
+  const normalizedTodos = Array.isArray(todos)
+    ? todos
+    : todos && typeof todos === "object"
+    ? Object.values(todos)
+    : [];
   return (
     <div className={styles.todoListContainer}>
       <h2>Your Todo List</h2>
 
       <ul>
         {/* show message when empty, otherwise render todos */}
-        {!todos || todos.length === 0 ? (
+        {!normalizedTodos || normalizedTodos.length === 0 ? (
           <li>
             <div className={styles.noTodos}>No todos created yet.</div>
           </li>
         ) : (
-          todos.map((todo) => (
+          normalizedTodos.map((todo) => (
             <li key={todo.id}>
               <TodoItem
                 todo={todo}
