@@ -60,7 +60,7 @@ pip install -r backend/requirements.txt
 ```bash
 cd backend
 python manage.py migrate
-python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 127.0.0.1:8000
 ```
 
 3. Confirm the API works: open `http://127.0.0.1:8000/api/todos/` in your browser or Postman.
@@ -92,7 +92,11 @@ django-cors-headers==4.9.0
 Create a `.env` in `backend/` and set values such as:
 
 ```
-DJANGO_SECRET_KEY=your_secret_key
+SECRET_KEY=your_secret_key
+```
+Create a `.env.local` in `frontend/` and set values such as:
+```
+VITE_API_URL = "http://localhost:8000/api"
 ```
 
 ## CORS & Auth notes
@@ -127,8 +131,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 ```
 # backend
 cd backend
-python -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
@@ -138,5 +140,20 @@ cd frontend
 npm install
 npm run dev
 ```
+## Troubleshooting
 
+**Error: `todos.map is not a function`**
+- Ensure backend is running on `http://127.0.0.1:8000`
+- Run `npm install` in `frontend/` folder
+- Create `frontend/.env.local` with `VITE_API_URL=http://127.0.0.1:8000`
+- Clear cache: `rm -r node_modules && npm install`
+
+**Check both servers are running:**
+```bash
+# Terminal 1: Backend
+cd backend && python manage.py runserver
+
+# Terminal 2: Frontend  
+cd frontend && npm run dev
+```
 ---
