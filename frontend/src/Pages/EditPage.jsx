@@ -1,4 +1,4 @@
-import TodoForm from "../components/TodoForm/todoForm";
+import TodoEditForm from "../components/EditForm/editForm";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -20,7 +20,7 @@ export default function EditPage({ todos = [], onUpdate }) {
   if (!todo) return <div style={{ padding: 20 }}>Todo not found</div>;
 
   return (
-    <TodoForm
+    <TodoEditForm
       title={title}
       setTitle={setTitle}
       description={description}
