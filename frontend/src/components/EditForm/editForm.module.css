@@ -37,3 +37,26 @@
   border-radius: 4px;
   cursor: pointer;
 }
+/* Responsive design */
+@media screen and (max-width: 520px) {
+  .titleInput {
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .descriptionInput {
+    width: 300px;
+    height: 80px;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    padding: 8px;
+  }
+}

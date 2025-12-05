@@ -96,7 +96,8 @@
   }
   /* smaller compact menu for small screens */
   .optionMenu {
-    width: 90px;
+    width: 80px;
+    height: 65px;
     right: 6px;
     top: calc(100% + 4px);
     padding: 2px 0;
@@ -105,6 +106,10 @@
   .optionItem {
     padding: 6px 4px;
     font-size: 12px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .btn {
     font-size: 12px;
