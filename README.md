@@ -60,7 +60,7 @@ pip install -r backend/requirements.txt
 ```bash
 cd backend
 python manage.py migrate
-python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 127.0.0.1:8000
 ```
 
 3. Confirm the API works: open `http://127.0.0.1:8000/api/todos/` in your browser or Postman.
@@ -92,7 +92,11 @@ django-cors-headers==4.9.0
 Create a `.env` in `backend/` and set values such as:
 
 ```
-DJANGO_SECRET_KEY=your_secret_key
+SECRET_KEY=your_secret_key
+```
+Create a `.env.local` in `frontend/` and set values such as:
+```
+VITE_API_URL = "http://localhost:8000/api"
 ```
 
 ## CORS & Auth notes
