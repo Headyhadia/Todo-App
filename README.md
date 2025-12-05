@@ -131,8 +131,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 ```
 # backend
 cd backend
-python -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
@@ -142,5 +140,20 @@ cd frontend
 npm install
 npm run dev
 ```
+## Troubleshooting
 
+**Error: `todos.map is not a function`**
+- Ensure backend is running on `http://127.0.0.1:8000`
+- Run `npm install` in `frontend/` folder
+- Create `frontend/.env.local` with `VITE_API_URL=http://127.0.0.1:8000`
+- Clear cache: `rm -r node_modules && npm install`
+
+**Check both servers are running:**
+```bash
+# Terminal 1: Backend
+cd backend && python manage.py runserver
+
+# Terminal 2: Frontend  
+cd frontend && npm run dev
+```
 ---
